@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何优雅的使用Windows之编辑器SublimeText | Micheal Gardner的编程小屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在茫茫人海中，为什么仅仅选择了Sublime作为主编辑器。我的备选编辑器方案有四款。
+
+vim  神之编辑器
+emacs 编辑器之神
+notepad++ 编辑器
+其他编辑器。
+
+我的编辑器评判标准语言方面要有HTML+CSS+JS+Python+autohotkey+markdown兼顾可配置性和实用性。
+其他编辑器有什么缺陷吗？vim 符合终端时代的编辑模式，不符合GUI界面的编辑方法（可以键鼠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何优雅的使用Windows之编辑器SublimeText">
+<meta property="og:url" content="http://twocucao.github.com/2015/02/27/编辑器Sublime/index.html">
+<meta property="og:site_name" content="Micheal Gardner的编程小屋">
+<meta property="og:description" content="在茫茫人海中，为什么仅仅选择了Sublime作为主编辑器。我的备选编辑器方案有四款。
+
+vim  神之编辑器
+emacs 编辑器之神
+notepad++ 编辑器
+其他编辑器。
+
+我的编辑器评判标准语言方面要有HTML+CSS+JS+Python+autohotkey+markdown兼顾可配置性和实用性。
+其他编辑器有什么缺陷吗？vim 符合终端时代的编辑模式，不符合GUI界面的编辑方法（可以键鼠">
+<meta property="og:image" content="http://streetwill.co/uploads/post/photo/234/medium_YFsCZGVJGtsnH_Sa5SRDxB9-4-If6IUWFjFP5E3s-Ak.JPG">
+<meta property="og:image" content="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg">
+<meta property="og:image" content="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg">
+<meta property="og:image" content="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何优雅的使用Windows之编辑器SublimeText">
+<meta name="twitter:description" content="在茫茫人海中，为什么仅仅选择了Sublime作为主编辑器。我的备选编辑器方案有四款。
+
+vim  神之编辑器
+emacs 编辑器之神
+notepad++ 编辑器
+其他编辑器。
+
+我的编辑器评判标准语言方面要有HTML+CSS+JS+Python+autohotkey+markdown兼顾可配置性和实用性。
+其他编辑器有什么缺陷吗？vim 符合终端时代的编辑模式，不符合GUI界面的编辑方法（可以键鼠">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo"></i><span class="site-title">Micheal Gardner的编程小屋</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/categories/编程">编程</a>
+        
+          <a class="main-nav-link" href="/categories/思考">思考</a>
+        
+          <a class="main-nav-link" href="/GitBooks/LeetCode">LeetCode</a>
+        
+          <a class="main-nav-link" href="/GitBooks/PyDjango">PyDjango</a>
+        
+          <a class="main-nav-link" href="/GitBooks/CodeLife">CodeLife</a>
+        
+          <a class="main-nav-link" href="/categories/打卡">打卡</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div class="profile" id="profile-nav">
+          <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+        </div>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="q" value="site:http://twocucao.github.com"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+      
+        <td><a class="main-nav-link" href="/">首页</a></td>
+      
+        <td><a class="main-nav-link" href="/archives">存档</a></td>
+      
+        <td><a class="main-nav-link" href="/categories/编程">编程</a></td>
+      
+        <td><a class="main-nav-link" href="/categories/思考">思考</a></td>
+      
+        <td><a class="main-nav-link" href="/GitBooks/LeetCode">LeetCode</a></td>
+      
+        <td><a class="main-nav-link" href="/GitBooks/PyDjango">PyDjango</a></td>
+      
+        <td><a class="main-nav-link" href="/GitBooks/CodeLife">CodeLife</a></td>
+      
+        <td><a class="main-nav-link" href="/categories/打卡">打卡</a></td>
+      
+        <td><a class="main-nav-link" href="/about">关于</a></td>
+      
+      <td>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://twocucao.github.com"></form>
+      </td>
+      </tr>
+    </table>
+  </div>
+  
+</header>
+    <div class="outer">
+      <aside id="profile">
+  <div class="inner profile-inner">
+  	<div class="base-info profile-block">
+		  <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">Micheal Gardner</h2>
+      <h3 id="title">Web Developer &amp; Designer</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Harbin, China</span>
+      <a id="follow" href="https://github.com/twocucao/">关注我</a>
+  	</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        27
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        38
+        <span>标签</span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+        
+          <td><a href="http://github.com/twocucao" title="github"><i class="fa fa-github"></i></a></td>
+        
+          <td><a href="/#" title="twitter"><i class="fa fa-twitter"></i></a></td>
+        
+          <td><a href="/#" title="facebook"><i class="fa fa-facebook"></i></a></td>
+        
+          <td><a href="/#" title="dribbble"><i class="fa fa-dribbble"></i></a></td>
+        
+          <td><a href="/atom.xml" title="rss"><i class="fa fa-rss"></i></a></td>
+        
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+      <section id="main"><article id="post-编辑器Sublime" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何优雅的使用Windows之编辑器SublimeText
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/02/27/编辑器Sublime/">
+    <time datetime="2015-02-27T12:00:51.000Z" itemprop="datePublished">2015-02-27</time>
+  </a>
+</div>
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://streetwill.co/uploads/post/photo/234/medium_YFsCZGVJGtsnH_Sa5SRDxB9-4-If6IUWFjFP5E3s-Ak.JPG" alt="pic alt"></p>
+<h3 id="在茫茫人海中，为什么仅仅选择了Sublime作为主编辑器。">在茫茫人海中，为什么仅仅选择了Sublime作为主编辑器。</h3><p>我的备选编辑器方案有四款。</p>
+<ul>
+<li>vim  神之编辑器</li>
+<li>emacs 编辑器之神</li>
+<li>notepad++ 编辑器</li>
+<li>其他编辑器。</li>
+</ul>
+<h3 id="我的编辑器评判标准">我的编辑器评判标准</h3><p>语言方面要有HTML+CSS+JS+Python+autohotkey+markdown<br>兼顾可配置性和实用性。</p>
+<p>其他编辑器有什么缺陷吗？<br>vim 符合终端时代的编辑模式，不符合GUI界面的编辑方法（可以键鼠操作），学习路径过于陡峭，插件配置过于恶心繁琐。<br>emacs 符合GUI界面的编辑方法，但是配置繁杂。<br>notepad++以前觉得非常方便，直到喜欢上了Sublime才知道，原来美观的东西也可以非常强大。<br>其他，使用的不多。</p>
+<p>那么,这个Sublime究竟好在哪里？</p>
+<ul>
+<li>方便的Vim模式。</li>
+<li>各种语言特性支持。</li>
+<li>强大的社区支持。插件教程，balbalbala</li>
+<li>长的好看，而且能干。</li>
+</ul>
+<h2 id="最佳实践">最佳实践</h2><h3 id="下载安装(建议便携版本)">下载安装(建议便携版本)</h3><p><a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a></p>
+<h3 id="安装Package_Control_用于管理插件">安装Package Control  用于管理插件</h3><p>步骤: view showconsole 输入下面代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'eb2297e1a458f27d836c04bb0cbaf282'</span> + <span class="string">'d0e7a3098092775ccb37ca9d6b2e4b7d'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<p>重启,然后你就可以正常使用了</p>
+<h2 id="基本使用方法之编辑功能">基本使用方法之编辑功能</h2><h3 id="命令面板">命令面板</h3><p>^+p</p>
+<p>ctrl+shift+p 打开的是命令面板<br>命令面板主要内容分为四块.</p>
+<ul>
+<li>设置 </li>
+<li>改变语法</li>
+<li>来自插件的命令</li>
+</ul>
+<h3 id="Go_to_Anything">Go to Anything</h3><p>^p  打开的是切换面板<br>直接输入文件名可以切换文件<br>可以直接预览<br>输入 @ 可以查看按照Header查看(Markdown语法),代码中按照函数来查找<br>输入 # 可以查看变量</p>
+<h4 id="同一页面搜索">同一页面搜索</h4><p>^r</p>
+<h4 id="整个项目搜索">整个项目搜索</h4><p>ctrl + shift + r</p>
+<h4 id="Toggle_Sidebar">Toggle Sidebar</h4><p>ctrl+k Ctrl+b</p>
+<h4 id="切换面板">切换面板</h4><p>alt + shift + 1 to 4</p>
+<h4 id="直达某行">直达某行</h4><p>ctrl+g</p>
+<h4 id="移动行">移动行</h4><p>ctrl+shift+上下左右.</p>
+<h2 id="结论一">结论一</h2><p>嘿嘿,这样看上去你基本的编辑任务都是可以比较出色完成的吧?<br>好,我们依然可以看出来,这款编辑器的的确确足够日常编辑使用了,但是,还是并不代表有一定的优越性啊?</p>
+<p>你说,老师,能不能再给力一点啊?<br><img src="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg" alt=""></p>
+<h2 id="深入研究其中的编辑功能">深入研究其中的编辑功能</h2><p>把上面的一些功能进行系统性梳理.<br>已经有前辈完成了,我就直接贴上他的地址了.</p>
+<p><a href="http://feliving.github.io/Sublime-Text-3-Documentation/index.html" target="_blank" rel="external">http://feliving.github.io/Sublime-Text-3-Documentation/index.html</a></p>
+<h2 id="结论二,确实强大-但是…">结论二,确实强大.但是…</h2><p>你说,老师,能不能再给力一点啊?<br><img src="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg" alt=""><br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….<br>…………………….</p>
+<p>当然可以!!</p>
+<h2 id="插件,让sublime长出逆风飞翔的翅膀-">插件,让sublime长出逆风飞翔的翅膀.</h2><p>sublime的功能已经是比较强大了.可是还有什么地方可以优化的吗?<br>加上插件,可以增强已经有的功能,可以扩展越来没有的功能.下面请看好!</p>
+<h3 id="用Vim强化编辑功能-">用Vim强化编辑功能.</h3><p>在编辑强化方面,Sublime自带了一个非常好用的模式,叫做Vintage mode<br>这个模式有一点点的小问题,就是不方便,我们不妨使用另一个小插件来替换它.</p>
+<p><a href="https://github.com/guillermooo/Vintageous" target="_blank" rel="external">https://github.com/guillermooo/Vintageous</a></p>
+<p>ctrl+shift+p 输入install 输入{enter} 输入Vintageous{Enter}</p>
+<p>安装完毕,你就可以在Sublime上面比较方便的使用vim编辑方式了.</p>
+<h3 id="能不能好看一点?">能不能好看一点?</h3><p>Of course!</p>
+<p>来来来,戳这里戳这里</p>
+<p><a href="https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features" target="_blank" rel="external">https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features</a></p>
+<h3 id="新建文件可以方便一点吗?">新建文件可以方便一点吗?</h3><p>可以,AdvancedNewFile<br>你只需要ctrl+alt+n就可以使用这个插件.</p>
+<p>输入文件名可以直接在当前目录下新建.<br>你也可以使用相对路径比如  ../  或者 ../_drafts/AndroidShow<br>是不是非常方便?</p>
+<h3 id="侧边栏好像右键菜单好少,能不能再给力一点啊">侧边栏好像右键菜单好少,能不能再给力一点啊</h3><p>有,SidebarEnhancement</p>
+<h3 id="只能补全功能不够用,能不能再给力一点啊">只能补全功能不够用,能不能再给力一点啊</h3><p>好,SublimeCodeIntel</p>
+<h3 id="我有强迫症,对齐功能不够强大,能不能再给力一点啊">我有强迫症,对齐功能不够强大,能不能再给力一点啊</h3><p>好,ALignment</p>
+<h3 id="写注释可以方便一些,就像Intellij_IDEA那样写注释吗?">写注释可以方便一些,就像Intellij IDEA那样写注释吗?</h3><p>可以 Doc Blockr</p>
+<h3 id="前端工程师要那些插件吗?">前端工程师要那些插件吗?</h3><p>Emmet<br>HTML-CSS-JS<br>等等</p>
+<h3 id="我平时用markdown写BLOG,有什么比较方便的东西吗?">我平时用markdown写BLOG,有什么比较方便的东西吗?</h3><p>markdown </p>
+<ul>
+<li>extended</li>
+<li>preview</li>
+<li>light</li>
+<li>toc</li>
+</ul>
+<h2 id="结论三,老师真的很好用啊-但是…">结论三,老师真的很好用啊.但是…</h2><p>你说,老师,能不能再给力一点啊?<br><img src="http://imgsrc.baidu.com/forum/w%3D580/sign=87eeeefcd688d43ff0a991fa4d1cd2aa/1f91e058ccbf6c81fbe76561bc3eb13532fa407e.jpg" alt=""><br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….<br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….<br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….<br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….<br>……………………..<br>………………………<br>……………………..<br>…………………..<br>…………………….</p>
+<p>特码的,你是来编程的还是来配置编辑器的啊!<br>等你有需求了再去寻找更好的配置方案OK?</p>
+<h2 id="其他链接">其他链接</h2><p>这个BLog分享了不少关于Sublime的干货<br><a href="https://scotch.io/" target="_blank" rel="external">https://scotch.io/</a></p>
+<p>这个视频链接讲解了一些关于Sublime的一些小知识.<br><a href="http://www.imooc.com/learn/40" target="_blank" rel="external">http://www.imooc.com/learn/40</a></p>
+<p>sublime 非官方资源<br><a href="http://docs.sublimetext.info/en/latest/index.html" target="_blank" rel="external">http://docs.sublimetext.info/en/latest/index.html</a></p>
+<blockquote>
+<p>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
+</blockquote>
+<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://twocucao.github.com/2015/02/27/编辑器Sublime/" data-id="ci8mbp0yx001jw2n3ehecjsr4" class="article-share-link">分享到</a>
+      
+        <a href="http://twocucao.github.com/2015/02/27/编辑器Sublime/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windowser/">Windowser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/效率/">效率</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/27/ESL女人的一天/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ESL之Lucy的一天
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/26/ESL男人的一天/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ESL之Jeff的一天</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://twocucao.github.com/2015/02/27/编辑器Sublime/" data-title="如何优雅的使用Windows之编辑器SublimeText" data-url="http://twocucao.github.com/2015/02/27/编辑器Sublime/">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+      </div>
+  </section>
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/04/17/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/04/17/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-04-17T07:46:49.000Z" itemprop="datePublished">2015-04-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/22/真正的交流沟通/" class="thumbnail">
+  
+    <span style="background-image:url(http://streetwill.co/uploads/post/photo/315/medium_2KIcZWinamB5poa6WLdn0zFH40HrYpiMX4fG8aINHbY.jpg
+)" alt="真正的交流沟通" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/思考/">思考</a></p>
+              <p class="item-title"><a href="/2015/03/22/真正的交流沟通/" class="title">真正的交流沟通</a></p>
+              <p class="item-date"><time datetime="2015-03-22T01:00:00.000Z" itemprop="datePublished">2015-03-22</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/17/闲来无事脑洞大开/" class="thumbnail">
+  
+    <span style="background-image:url(http://streetwill.co/uploads/post/photo/211/medium_pLMdTqsTTqHUzKz5f1v3vy-J81TFzBZ--s7a9imBU0s.JPG
+)" alt="闲来无事，脑洞大开" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/扯淡/">扯淡</a></p>
+              <p class="item-title"><a href="/2015/03/17/闲来无事脑洞大开/" class="title">闲来无事，脑洞大开</a></p>
+              <p class="item-date"><time datetime="2015-03-17T10:40:23.000Z" itemprop="datePublished">2015-03-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/17/打卡201503/" class="thumbnail">
+  
+    <span style="background-image:url(http://ww3.sinaimg.cn/bmiddle/66408937jw1eq8esyqcu3j20a00i5dh5.jpg
+)" alt="打卡记录201503" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/打卡/">打卡</a></p>
+              <p class="item-title"><a href="/2015/03/17/打卡201503/" class="title">打卡记录201503</a></p>
+              <p class="item-date"><time datetime="2015-03-17T08:17:51.000Z" itemprop="datePublished">2015-03-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/17/扇贝背单词小助手/" class="thumbnail">
+  
+    <span style="background-image:url(https://zero-space.s3.amazonaws.com/photos/08f50603-a236-40b1-a8f3-919fc5a05ff6x840.jpg
+)" alt="扇贝背单词小助手" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/编程/">编程</a></p>
+              <p class="item-title"><a href="/2015/03/17/扇贝背单词小助手/" class="title">扇贝背单词小助手</a></p>
+              <p class="item-date"><time datetime="2015-03-17T03:20:51.000Z" itemprop="datePublished">2015-03-17</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/声明/">声明</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/打卡/">打卡</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/扯淡/">扯淡</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/英语/">英语</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计划/">计划</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/非技术类/">非技术类</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目/">项目</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/高效率软件/">高效率软件</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Autohotkey/">Autohotkey</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESLPOD/">ESLPOD</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windower/">Windower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windowser/">Windowser</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autohotkey/">autohotkey</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人际交流/">人际交流</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/声明/">声明</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思考/">思考</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/打卡/">打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扯淡需要什么tag/">扯淡需要什么tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/效率/">效率</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常词汇/">日常词汇</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活，感悟/">生活，感悟</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/男女关系/">男女关系</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程工具/">编程工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程技巧/">编程技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高效/">高效</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Autohotkey/" style="font-size: 10px;">Autohotkey</a><a href="/tags/ESLPOD/" style="font-size: 16.67px;">ESLPOD</a><a href="/tags/HEXO/" style="font-size: 10px;">HEXO</a><a href="/tags/Python/" style="font-size: 13.33px;">Python</a><a href="/tags/Windower/" style="font-size: 10px;">Windower</a><a href="/tags/Windowser/" style="font-size: 20px;">Windowser</a><a href="/tags/autohotkey/" style="font-size: 10px;">autohotkey</a><a href="/tags/test/" style="font-size: 10px;">test</a><a href="/tags/人际交流/" style="font-size: 10px;">人际交流</a><a href="/tags/声明/" style="font-size: 10px;">声明</a><a href="/tags/思考/" style="font-size: 10px;">思考</a><a href="/tags/打卡/" style="font-size: 13.33px;">打卡</a><a href="/tags/扯淡需要什么tag/" style="font-size: 10px;">扯淡需要什么tag</a><a href="/tags/技术/" style="font-size: 10px;">技术</a><a href="/tags/效率/" style="font-size: 20px;">效率</a><a href="/tags/日常词汇/" style="font-size: 13.33px;">日常词汇</a><a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a><a href="/tags/生活，感悟/" style="font-size: 13.33px;">生活，感悟</a><a href="/tags/男女关系/" style="font-size: 10px;">男女关系</a><a href="/tags/编程/" style="font-size: 10px;">编程</a><a href="/tags/编程工具/" style="font-size: 10px;">编程工具</a><a href="/tags/编程技巧/" style="font-size: 10px;">编程技巧</a><a href="/tags/计划/" style="font-size: 10px;">计划</a><a href="/tags/项目/" style="font-size: 10px;">项目</a><a href="/tags/高效/" style="font-size: 16.67px;">高效</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Micheal Gardner<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"twocucao"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
