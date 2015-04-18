@@ -202,15 +202,15 @@
 <p>执行任务的脚本如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="通过这个例子,我们可以看出shell可以帮助我们解决什么样子问题">通过这个例子,我们可以看出shell可以帮助我们解决什么样子问题</h2><h2 id="shell脚本基本语法">shell脚本基本语法</h2><p>注意,这里是如何组合shell命令.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/zsh</span></span><br><span class="line"><span class="comment"># 注释,放在文件开头,表明是由zsh执行</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> “这里是文本”</span><br><span class="line"></span><br><span class="line">ooxx = “我一个变量君”</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> “</span><br><span class="line">这里</span><br><span class="line">看这里</span><br><span class="line">这样子可以有多行文本</span><br><span class="line">还可以有变量 <span class="variable">$ooxx</span></span><br><span class="line">”</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/zsh</span></span><br><span class="line"><span class="comment"># 注释,放在文件开头,表明是由zsh执行</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> “这里是文本”</span><br><span class="line"></span><br><span class="line">ooxx = “我变量君”</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> “</span><br><span class="line">这里</span><br><span class="line">看这里</span><br><span class="line">这样子可以有多行文本</span><br><span class="line">还可以有变量 <span class="variable">$ooxx</span></span><br><span class="line">”</span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> -r TITLE=<span class="string">"Page Title"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面是变量赋值PS:我认为shell的语法真的是比较烂的.不信你看看下面</span></span><br><span class="line">a=z </span><br><span class="line"><span class="comment"># string z 赋值给 变量a</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 但是如果string 里面有空格或者变量,那就需要用括号</span></span><br><span class="line">a = “zz zz   zzz  <span class="variable">$a</span>”</span><br><span class="line"><span class="comment"># 或者命令的执行结果可以包装成一个(变量?匿名变量?)</span></span><br><span class="line">d = $(ls <span class="operator">-l</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#还有一些系统常量,一般用大写来写.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#函数,使用 $(name) 来引用</span></span><br><span class="line"><span class="keyword">function</span> name&#123;</span><br><span class="line">    commands</span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 但是推荐这种写法</span></span><br><span class="line"><span class="function"><span class="title">name</span></span>()&#123;</span><br><span class="line">    commands</span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># if</span></span><br><span class="line"><span class="keyword">if</span> commands; <span class="keyword">then</span></span><br><span class="line">    commands</span><br><span class="line">[<span class="keyword">elif</span> commands; <span class="keyword">then</span></span><br><span class="line">    commands...]</span><br><span class="line">[<span class="keyword">else</span></span><br><span class="line">    commands]</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <h2 id="常用的shell命令">常用的shell命令</h2><h2 id="扩展链接">扩展链接</h2><p>我们今天就直接编写一个小脚本用于自动化处理日常任务的小Shell</p>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/04/18/Shell笔记/" data-id="ci8mesxqb000j24n3db1jfprt" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/04/18/Shell笔记/" data-id="ci8meycuu000jatn3jqqmecbg" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/04/18/Shell笔记/#ds-thread" class="article-comment-link">评论</a>
       
@@ -345,13 +345,13 @@
 <p>永远不要和脑残打交道.</p>
 </blockquote>
 <h2 id="0x0E_参考链接+扩展链接">0x0E 参考链接+扩展链接</h2><p>博客文章原创声明：<br>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/22/真正的交流沟通/" data-id="ci8mesxqf000q24n3ddhge376" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/22/真正的交流沟通/" data-id="ci8meycuy000qatn3ggf8myuj" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/22/真正的交流沟通/#ds-thread" class="article-comment-link">评论</a>
       
@@ -410,13 +410,13 @@
 <p>十里平湖霜满天<br>寸寸青丝愁华年<br>对月形单望相互<br>只羡鸳鸯不羡仙 </p>
 </blockquote>
 <h2 id="0x02_月光洒，女子香">0x02 月光洒，女子香</h2><h2 id="0x03_大闹穹顶之下">0x03 大闹穹顶之下</h2><h2 id="0x04_大梦初醒">0x04 大梦初醒</h2><h2 id="0xEE_外部链接">0xEE 外部链接</h2><p>博客文章原创声明：<br>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/17/闲来无事脑洞大开/" data-id="ci8mesxqi000v24n3ciw269l0" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/17/闲来无事脑洞大开/" data-id="ci8meycv1000vatn34ysingdv" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/17/闲来无事脑洞大开/#ds-thread" class="article-comment-link">评论</a>
       
@@ -471,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/17/打卡201503/" data-id="ci8mesxq6000b24n3k2mwa3z4" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/17/打卡201503/" data-id="ci8meycup000batn3ogssbnp2" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/17/打卡201503/#ds-thread" class="article-comment-link">评论</a>
       
@@ -537,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/17/扇贝背单词小助手/" data-id="ci8mesxql001024n3r3q7jgtf" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/17/扇贝背单词小助手/" data-id="ci8meycv40010atn3cydzdu8p" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/17/扇贝背单词小助手/#ds-thread" class="article-comment-link">评论</a>
       
@@ -644,13 +644,13 @@
 <p>没办法,修改一下headers,然后继续访问即可.原理部分见我关于计算机网络的文章.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>博客文章原创声明：<br>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/09/爬虫/" data-id="ci8mesxqp001724n3ycy5n5cg" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/09/爬虫/" data-id="ci8meycv80017atn3znl4nf0z" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/09/爬虫/#ds-thread" class="article-comment-link">评论</a>
       
@@ -698,12 +698,12 @@
       
         <p><img src="http://streetwill.co/uploads/post/photo/228/medium_4iWno4pT-RX1J7qFyhVX3tLzbQuzRObt81zZKGCP1-4.jpg" alt="pic alt"></p>
 <h2 id="文章目录">文章目录</h2><p>迁移成功!</p>
-<h2 id="正文">正文</h2><h2 id="博客文章原创声明：">博客文章原创声明：</h2><p>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。<br>关于本人: <a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">http://twocucao.xyz/aboutme/</a><br>点击链接就可以以web幻灯片的方式看到我的介绍。<br>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a> （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
+<h2 id="正文">正文</h2><h2 id="博客文章原创声明：">博客文章原创声明：</h2><p>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。<br>关于本人: <a href="http://twocucao.xyz/about/" target="_blank" rel="external">http://twocucao.xyz/about/</a><br>点击链接就可以以web幻灯片的方式看到我的介绍。<br>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a> （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/04/开发平台的转移以及配置/" data-id="ci8mesxqw001i24n3fzr7uorz" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/04/开发平台的转移以及配置/" data-id="ci8meycve001iatn3mukic1r2" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/04/开发平台的转移以及配置/#ds-thread" class="article-comment-link">评论</a>
       
@@ -812,13 +812,13 @@
 <p>tabularize<br>强迫症对齐利器</p>
 <h2 id="正文">正文</h2><h3 id="简介">简介</h3><h3 id=""> </h3><h2 id="扩展链接">扩展链接</h2><p>其他的工具。</p>
 <p>博客文章原创声明：<br>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/03/01/编辑器Vim/" data-id="ci8mesxqt001c24n330me6szm" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/03/01/编辑器Vim/" data-id="ci8meycvc001catn36j8h7vp2" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/03/01/编辑器Vim/#ds-thread" class="article-comment-link">评论</a>
       
@@ -875,13 +875,13 @@
 <h3 id="EXTENDED-6">EXTENDED</h3><h2 id="Episode_8_–_Eating_Dinner_and_Making_Dessert">Episode 8 – Eating Dinner and Making Dessert</h2><h3 id="GLOSSARY-7">GLOSSARY</h3><p>napkin<br>dining room<br>place mat<br>geograph<br>dessert<br>to preheat<br>oven<br>ready-made<br>to bake<br>cookie sheet<br>aluminum foil<br>to do the dishes<br>to shape<br>dough<br>oven mitts<br>to cool<br>Tupperware container</p>
 <h3 id="EXTENDED-7">EXTENDED</h3><h2 id="Episode_9_–_Cleaning_and_Relaxing">Episode 9 – Cleaning and Relaxing</h2><h3 id="GLOSSARY-8">GLOSSARY</h3><p>energetic<br>rag<br>to dust<br>to wipe<br>filthy<br>vacuum<br>to pick up<br>to put things away<br>to mop<br>to scrub<br>newscast<br>national news<br>to flip though the channels<br>commercial<br>reality show<br>remote<br>to thumb through<br>to chat</p>
 <h3 id="EXTENDED-8">EXTENDED</h3><h2 id="Episode_10_–_Getting_Ready_Bed_and_Going_to_Sleep">Episode 10 – Getting Ready Bed and Going to Sleep</h2><h3 id="GLOSSARY-9">GLOSSARY</h3><p>cleanser<br>towel<br>toner<br>moisturizer<br>to comb<br>to tie (something) back<br>beat<br>to get undressed<br>hamper<br>pajamas<br>slippers<br>to pull back<br>covers<br>alarm<br>to lay down<br>ritual<br>to fall asleep</p>
-<h3 id="EXTENDED-9">EXTENDED</h3><p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<h3 id="EXTENDED-9">EXTENDED</h3><p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/02/27/ESL女人的一天/" data-id="ci8mesxra002524n35rl103kp" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/02/27/ESL女人的一天/" data-id="ci8meycvt0025atn3c8ntnvxv" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/02/27/ESL女人的一天/#ds-thread" class="article-comment-link">评论</a>
       
@@ -998,13 +998,13 @@
 <blockquote>
 <p>本博文章如果没有声明为整理或者转载,均为本人原创。非商业可以任意转载分享。但是编写的代码如果没有特别声明，虽然我建议保留原作者出处，但是代码皆为mit协议，也就是修改了名字也算是你的版权，开源世界嘛，我就喜欢那些可以拿来直接使用的东西，贯彻最纯粹的免费自由，但是求求你，改掉名字等等信息再说是版权是你的啊。</p>
 </blockquote>
-<p><a href="http://twocucao.xyz/aboutme/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
+<p><a href="http://twocucao.xyz/about/" target="_blank" rel="external">关于本人</a>,<br>点击链接就可以以web幻灯片的方式看到我的介绍。</p>
 <p>我的Github地址: <a href="https://github.com/twocucao" target="_blank" rel="external">https://github.com/twocucao</a>  （尽管东西不多，但是欢迎来Star和Fork，就算你们来这里提前Star Folk了）<br>简书地址: <a href="http://www.jianshu.com/users/9a7e0b9da317/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/9a7e0b9da317/latest_articles</a> （不常更新，而且几乎没有技术文章的讲解）<br>联系方式: twocucao@gmail.com<br>本人才疏学浅，是一个水平比较菜的程序员，如果行文之间发现任何错误，欢迎指正，特别欢迎技术上的指正。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://twocucao.github.com/2015/02/27/编辑器Sublime/" data-id="ci8mesxr0001o24n38mecugzs" class="article-share-link">分享到</a>
+      <a data-url="http://twocucao.github.com/2015/02/27/编辑器Sublime/" data-id="ci8meycvi001oatn3wciw8rit" class="article-share-link">分享到</a>
       
         <a href="http://twocucao.github.com/2015/02/27/编辑器Sublime/#ds-thread" class="article-comment-link">评论</a>
       
