@@ -1,0 +1,19 @@
+{
+    "gitbook": ">=2.0.0",
+    "title": "RubyOnRailsCasts",
+    "plugins" : [ "maxiang","autocover" ],
+    "author": "Micheal Gardner",
+    "font": {
+        "size": null,
+        "family": "Impact",
+        "color": "#FFF"
+    },
+    "size": {
+        "w": 1800,
+        "h": 2360
+    },
+    "background": {
+        "color": "#09F"
+    }
+
+}
