@@ -1,0 +1,39 @@
+# 本书目录
+
+* [简介](Intro/00.0)
+   * [本书内容](Intro/00.1.md)
+* [蓝桥杯](Lanqiao/01.0.0.md)
+   * [基础](Lanqiao/01.1.0.md)
+   * [基础一般](Lanqiao/01.1.1.md)
+   * [基础VIP](Lanqiao/01.1.2.md)
+   * [算法提高](Lanqiao/01.2.0.md)
+   * [算法提高之一](Lanqiao/01.2.1.md)
+   * [算法提高之二](Lanqiao/01.2.2.md)
+   * [算法提高之三](Lanqiao/01.2.3.md)
+   * [算法提高之四](Lanqiao/01.2.4.md)
+   * [历届试题](Lanqiao/01.3.0.md)
+   * [历届试题之一](Lanqiao/01.3.1.md)
+   * [历届试题之二](Lanqiao/01.3.2.md)
+   * [历届试题之三](Lanqiao/01.3.3.md)
+   * [技巧总结](Lanqiao/01.4.0.md)
+   * [技巧总结之库函数](Lanqiao/01.4.1.md)	
+   * [技巧总结之编程习惯](Lanqiao/01.4.2.md)	
+   * [技巧总结之算法模块](Lanqiao/01.4.3.md)	
+   * [技巧总结之常用模型](Lanqiao/01.4.4.md)	
+* [Leetcode](LeetCode/02.0.0.md)
+   * [简单](LeetCode/02.1.0.md)
+   * [中等](LeetCode/02.2.0.md)
+   * [困难](LeetCode/02.3.0.md)
+* [算法4th](Algo4th/03.0.0.md)
+   * [基础](Algo4th/03.1.0.md)
+   * [排序](Algo4th/03.2.0.md)
+   * [搜索](Algo4th/03.3.0.md)
+   * [图](Algo4th/03.4.0.md)
+   * [字符串](Algo4th/03.5.0.md)
+   * [字符串](Algo4th/03.6.0.md)
+
+
+npm install gitbook-plugin-autocover -d -g \
+         --disturl=http://dist.u.qiniudn.com \
+         --registry=http://r.cnpmjs.org
+
